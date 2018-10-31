@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>In The Kitchen | Simple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A lot of work has been going on since the last release on the 5th of August.">
+<meta name="keywords" content="whats-cooking">
+<meta property="og:type" content="article">
+<meta property="og:title" content="In The Kitchen">
+<meta property="og:url" content="http://yoursite.com/In-The-Kitchen/index.html">
+<meta property="og:site_name" content="Simple">
+<meta property="og:description" content="A lot of work has been going on since the last release on the 5th of August.">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-31T21:39:03.888Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="In The Kitchen">
+<meta name="twitter:description" content="A lot of work has been going on since the last release on the 5th of August.">
+  
+    <link rel="alternate" href="/atom.xml" title="Simple" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|KoHo" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Simple</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-In-The-Kitchen" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/In-The-Kitchen/" class="article-date">
+  <time datetime="2018-10-31T20:26:53.000Z" itemprop="datePublished">2018-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      In The Kitchen
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A lot of work has been going on since the last release on the 5th of August. </p>
+<a id="more"></a>
+<p>Since the last release ( 0.3.36 ), the simple-lang community have been working endlessly and tiredlessly towards the next release. Let’s see what has been going on behind the scenes :</p>
+<h2 id="PR-Count"><a href="#PR-Count" class="headerlink" title="PR Count"></a>PR Count</h2><p>Since the last release, <strong>11</strong> PRs have been merged into the <em>master</em> branch containing heavy weight commits of important feature additions, bug fixes, enhancement and a lot more. One major PR is still on hold, I’ll give you a subtle gist on what the PR is all about.</p>
+<h2 id="Adding-Cross-Platform-Unix-Build"><a href="#Adding-Cross-Platform-Unix-Build" class="headerlink" title="Adding Cross-Platform Unix Build"></a>Adding Cross-Platform Unix Build</h2><p>The idea of using a universal makefile and/or build file was brought by one of the core Mac contributors, <a href="https://github.com/appcypher" target="_blank" rel="noopener">appcypher</a>. In this PR, he defines universality in the Unix OSes to reduce the amount of build files simple has.</p>
+<h3 id="What’s-This-Universality"><a href="#What’s-This-Universality" class="headerlink" title="What’s This Universality ?"></a>What’s This Universality ?</h3><p>Both Mac and Linux are Unix OSes i.e they share almost the same file heirachy system. In this build files, he merges,<a href="https://github.com/appcypher" target="_blank" rel="noopener">appcypher</a>, the build instructional codes from the Linux and Mac system and <a href="https://github.com/mykeels" target="_blank" rel="noopener">mykeels</a>, another core Mac contributor, intelligently matches the OS type to create their respective shared libraries.</p>
+<h2 id="PR"><a href="#PR" class="headerlink" title="PR"></a>PR</h2><p>The PR status is still on hold but definitely has a ton of comments, you can check it <a href="https://github.com/simple-lang/simple/pull/29" target="_blank" rel="noopener">here</a></p>
+<h2 id="What-Is-In-The-Kitchen"><a href="#What-Is-In-The-Kitchen" class="headerlink" title="What Is In The Kitchen ?"></a>What Is In The Kitchen ?</h2><p>Apart from the universal makefile in progress, a number of features have been added likewise enhancements and bug fixes. These additions will be discussed accordinly:</p>
+<h3 id="1-Module-Call-Style"><a href="#1-Module-Call-Style" class="headerlink" title="1. Module Call Style"></a>1. Module Call Style</h3><p>One of the most interesting enhancement done to the module path in simple-lang is the change of style in module call. Formerly, modules are called in this manner:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call &quot;modulegrandparent/moduleparent/module&quot;</span><br></pre></td></tr></table></figure>
+<p>That style had the VM look for the module in the <code>simple</code> module path and it’s depth was 5-foot directory level but after a suggestion was raised in the <a href="https://gitter.com/simple-language" target="_blank" rel="noopener">IRC Channel</a> by a core contributor <a href="https://github.com/Youngestdev" target="_blank" rel="noopener">Youngestdev</a>, it was implemented here in this <a href="https://github.com/simple-lang/simple/pull/34" target="_blank" rel="noopener">PR</a> by the Author of simple-lang, <a href="https://github.com/Thecarisma" target="_blank" rel="noopener">TheCarisma</a>.</p>
+<blockquote>
+<p>It’s one of my best feature currently.</p>
+</blockquote>
+<h3 id="2-The-finalkeyword"><a href="#2-The-finalkeyword" class="headerlink" title="2. The finalkeyword"></a>2. The finalkeyword</h3><p>Simple is a weakly typed language and might become a strictly typed language, see <a href="https://github.com/simple-lang/simple/issues/42" target="_blank" rel="noopener">this</a>. So, variables are easily over written in simple-lang and also, some hidden bugs result in some cases, such bugs are really hard to detect as they throw no error and the code works fine but the logic behind is faulty. The <code>final</code> keyword is birthed as a result.<br>  The final keyword, serves as a constant; any variable declared with final cannot be over written easily.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">final a = 10</span><br><span class="line"></span><br><span class="line">a = 20 // Error !</span><br></pre></td></tr></table></figure>
+<h3 id="3-A-New-OOP-Style"><a href="#3-A-New-OOP-Style" class="headerlink" title="3. A New OOP Style"></a>3. A New OOP Style</h3><p>This is perhaps my best feature yet. Well, there is a new style of declaring classes, bringing more beauty to the OOP world in <code>simple</code>. The new styles for creating classes are:</p>
+<h4 id="A-Vintage-Style"><a href="#A-Vintage-Style" class="headerlink" title="A. Vintage Style"></a>A. Vintage Style</h4><p>Given a master test class, <code>TestClass</code> :</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestClass</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">	<span class="title">Back</span> </span>= <span class="string">"Gray"</span></span><br><span class="line">	Fore = <span class="string">"Red"</span></span><br><span class="line">	</span><br><span class="line">	block setBack(value)</span><br><span class="line">		Back = value + <span class="string">"_"</span> + Back</span><br><span class="line">	</span><br><span class="line">	block getBack()</span><br><span class="line">		<span class="keyword">return</span> Back+<span class="string">"_"</span>+Fore</span><br></pre></td></tr></table></figure>
+<p>Formerly, to set the value of Back and Fore, we do this:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">test = <span class="keyword">new</span> TestClass</span><br><span class="line">test.setBack = <span class="string">"Whatever"</span></span><br><span class="line"></span><br><span class="line">test.getBack() <span class="comment">// Return value of Back</span></span><br></pre></td></tr></table></figure>
+<p>But now, using the vintage style, we can access the values directly :</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">test2 = <span class="keyword">new</span> TestClass</span><br><span class="line">test2.Back = <span class="string">"Well ?"</span></span><br><span class="line"></span><br><span class="line">test2.Back <span class="comment">// Return value of Back</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>This approach, relieves the need for setters and getters like <code>getBack()</code> and <code>setBack()</code>.</p>
+</blockquote>
+<h4 id="B-Braces-Style"><a href="#B-Braces-Style" class="headerlink" title="B. Braces Style"></a>B. Braces Style</h4><p>Another new addition, is the braces style. The braces style also refutes the need for setters and getters but instead of using the vintage style to set class values, the braces style is used. Here’s the test class illustrating this style:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestClass</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">	<span class="title">name</span> </span>= <span class="string">"Unknown"</span></span><br><span class="line">	age = <span class="number">101</span></span><br><span class="line">	gender = <span class="string">"Amphrodite"</span></span><br></pre></td></tr></table></figure>
+<p>For a variable inheriting this class, it sets its’ values as thus:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">testExample = <span class="keyword">new</span> TestClass &#123; name = <span class="string">"Abdulazeez Adeshina"</span> gender = <span class="string">"Male"</span> age = <span class="number">16</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Returning values</span></span><br><span class="line"></span><br><span class="line">@ testExample.name</span><br><span class="line">@ testExample.gender</span><br><span class="line">@ testExample.age</span><br></pre></td></tr></table></figure>
+<p>How nice isn’t it ?</p>
+<h3 id="4-List-Rendering"><a href="#4-List-Rendering" class="headerlink" title="4. List Rendering"></a>4. List Rendering</h3><p>The new kind of for loop allows to iterate over the items in a list rather than the index e.g</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">list = [<span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> list &#123;</span><br><span class="line">    @x</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Output :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">one</span><br><span class="line">two</span><br><span class="line">three</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>it allows iterating over a list faster than using the index list[index] in a for loop</p>
+</blockquote>
+<h4 id="List-printing"><a href="#List-printing" class="headerlink" title="List printing"></a>List printing</h4><p>Formerly, List are printed into the console in an unordered manner which make it difficult to visually review the list. The following list is printed in below manner before and after the new feature request was merged.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list = [[<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>], <span class="string">"ade"</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+<p>Before :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line"></span><br><span class="line">ade</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td></tr></table></figure>
+<p>Now</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;], &quot;ade&quot;, 2, 3, 4, 5, 6, 7, 8, 9]</span><br></pre></td></tr></table></figure>
+<h2 id="Android-Support"><a href="#Android-Support" class="headerlink" title="Android Support"></a>Android Support</h2><p>This is actually to put you in suspense, a full blog post will be written on the support for Android. It has been implemented and working perfectly well in the emulator and still undergoing rigorous tests.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/In-The-Kitchen/" data-id="cjnxoqqdu0000e7skk7x68uan" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/whats-cooking/">whats-cooking</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/whats-cooking/">whats-cooking</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/whats-cooking/" style="font-size: 10px;">whats-cooking</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/In-The-Kitchen/">In The Kitchen</a>
+          </li>
+        
+          <li>
+            <a href="/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 The simple-lang team<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
