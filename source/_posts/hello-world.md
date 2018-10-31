@@ -1,40 +1,33 @@
 ---
 title: Hello World
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+
+Welcome to [simple-lang's](https://github.com/simple-lang)! official blog. In this mini blog, updates, new features and minor code articles will be written here. 
 
 <!-- more -->
 
-## Quick Start
+> This will be an introductory, welcoming post.
 
-### Create a new post
+## What's simple-lang all about ?
 
-``` bash
-$ hexo new "My New Post"
-```
+The Simple Intelligent and Modular Programming Language and Environment</br>
+Current Version : 0.3.213
+![simple-repl](https://i.imgur.com/qx5bbc3.png)
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+### About Simple
+SIMPLE is a plain and innovative programming with multi-paradigm. It can be embedded in C/C++ projects. The language is portable to various OS including windows, macOS, any linux and unix distros and other OS. The language is small and fast.
 
-### Run server
+### Features
 
-``` bash
-$ hexo server
-```
+Simple has features every programming language will have such as variable declarations, functional programming, Object oriented programming etc and more to come. It houses all these features as it parent architecture comes from **C**. Simple is weakly typed and [currently anticipated to be strongly typed](https://github.com/simple-lang/simple/issues/42), no explicit end of line required and can be embedded in C and C++ projects. Portability with javascript is a major goal we're trying and going to achieve.
 
-More info: [Server](https://hexo.io/docs/server.html)
+### All In All
 
-### Generate static files
+I actually wouldn't want to bore you with this introductory post, the community has written a couple of introductory posts :
 
-``` bash
-$ hexo generate
-```
++ [Introducing simple](https://dev.to/kvng_zeez/introducing-simple---a-new-programming-language--ld9)
++ [Simple Intelligent And Modular Programming Language](https://medium.com/@thecarisma/simple-simple-intelligent-and-modular-programming-language-and-environment-eed1a7551ec3)
 
-More info: [Generating](https://hexo.io/docs/generating.html)
+### Contributing ?
 
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+Do check out this wonderful project on [GitHub](https://github.com/simple-lang)
