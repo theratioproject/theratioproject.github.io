@@ -10,7 +10,7 @@ Welcome to [simple-lang's](https://github.com/simple-lang)! official blog. In th
 
 ## What's simple-lang all about ?
 
-The Simple Intelligent and Modular Programming Language and Environment</br>
+The Simple Intelligent and Modular Programming Language and Environment </br>
 Current Version : 0.3.36
 ![simple-repl](https://i.imgur.com/qx5bbc3.png)
 
