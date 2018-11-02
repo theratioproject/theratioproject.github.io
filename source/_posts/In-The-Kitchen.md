@@ -42,7 +42,7 @@ That style had the VM look for the module in the `simple` module path and it's d
 
 > It's one of my best feature currently.
 
-### 2. The finalkeyword
+### 2. The final keyword
 
 Simple is a weakly typed language and might become a strictly typed language, see [this](https://github.com/simple-lang/simple/issues/42). So, variables are easily over written in simple-lang and also, some hidden bugs result in some cases, such bugs are really hard to detect as they throw no error and the code works fine but the logic behind is faulty. The `final` keyword is birthed as a result. 
   The final keyword, serves as a constant; any variable declared with final cannot be over written easily.
