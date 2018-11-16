@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Building Modules | Simple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A module in simple-lang is the same as a package in other programming languages; they server particular functions and mostly comprises of classes and blocks.">
+<meta name="keywords" content="modules">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building Modules">
+<meta property="og:url" content="http://yoursite.com/Building-Modules/index.html">
+<meta property="og:site_name" content="Simple">
+<meta property="og:description" content="A module in simple-lang is the same as a package in other programming languages; they server particular functions and mostly comprises of classes and blocks.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://tinyimg.io/i/NgrhsAn.png">
+<meta property="og:updated_time" content="2018-11-16T19:34:21.843Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Building Modules">
+<meta name="twitter:description" content="A module in simple-lang is the same as a package in other programming languages; they server particular functions and mostly comprises of classes and blocks.">
+<meta name="twitter:image" content="http://tinyimg.io/i/NgrhsAn.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Simple" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|KoHo" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Simple</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Building-Modules" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Building-Modules/" class="article-date">
+  <time datetime="2018-11-16T18:15:49.000Z" itemprop="datePublished">2018-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Building Modules
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A module in simple-lang is the same as a package in other programming languages; they server particular functions and mostly comprises of classes and blocks.</p>
+<a id="more"></a>
+<p>On the 14<sub>th</sub> of November, a board member of simple-lang implemented a particular package in simple-lang. In this blogpost, he’ll be walking you on how he authored the module and by the end this is what we’ll be building - <a href="https://github.com/Youngestdev/NgBanks" target="_blank" rel="noopener">NgBanks</a>.</p>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><p>For this practical guide, you’ll be needing the following:</p>
+<ul>
+<li>Simple-lang installed in your machine</li>
+<li>Code editor.</li>
+</ul>
+<blockquote>
+<p>If you don’t have simple-lang installed, head over to the <a href="https://github.com/simple-lang/simple" target="_blank" rel="noopener">official installation guide</a>.</p>
+</blockquote>
+<h2 id="What-You’ll-Be-Building"><a href="#What-You’ll-Be-Building" class="headerlink" title="What You’ll Be Building"></a>What You’ll Be Building</h2><p>In this practical guide, you’ll be creating a module that returns Nigerian banks information upon request. You can perform only <code>CR</code> (Create and Read) operations for now.</p>
+<p><img src="http://tinyimg.io/i/NgrhsAn.png" alt="NgBanks Test Running"></p>
+<h2 id="Setting-Up-The-Project"><a href="#Setting-Up-The-Project" class="headerlink" title="Setting Up The Project"></a>Setting Up The Project</h2><p>First, you create a new directory.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir NgNews</span><br></pre></td></tr></table></figure>
+<p>Next, navigate into the directory </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> NgBanks</span><br></pre></td></tr></table></figure>
+<p>Create the installation file, module directory <code>src</code> and tests directory <code>test</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch install.sim &amp; mkdir src <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<p>With all that covered, create the module file <code>NgBanks.sim</code> in the src folder:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch src/NgBanks.sim</span><br></pre></td></tr></table></figure>
+<h2 id="Writing-the-Module"><a href="#Writing-the-Module" class="headerlink" title="Writing the Module"></a>Writing the Module</h2><p>To begin, open the project directory in your code editor of choice. I’m using Visual Studio Code together with the <a href="https://marketplace.visualstudio.com/items?itemName=appcypher.simple" target="_blank" rel="noopener">simple-lang extension</a>.</p>
+<p>Open <code>NgBanks.sim</code> and register the module name:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span> NgBanks</span><br></pre></td></tr></table></figure>
+<p>Next, declare the <code>NgBanks</code> class , it has no constructor:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NgBanks</span></span></span><br></pre></td></tr></table></figure>
+<p>After that, define the various methods the module would have :</p>
+<ul>
+<li><code>getBanks()</code> which returns all banks</li>
+<li><code>getBank(param)</code> which returns a bank based on the search param.</li>
+<li><code>addBank</code> - Adds a new bank on the fly ( current session ).</li>
+</ul>
+<p>You’ll start by defining the <code>getBanks()</code> method first.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">block getBanks()</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.banks</span><br></pre></td></tr></table></figure>
+<p>The <code>getBanks()</code> method returns all the bank in the <code>banks</code> variable.</p>
+<p>Next, define the <code>getBank(param)</code> method. To read a bank’s detail from the master list <code>banks</code>, an identifier needs to be passed so it is looped into the main list to retrieve the results. This method accepts only one parameter which is either the bank’s <em>slug</em> code or bank <em>code</em>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">block getBank(param)</span><br><span class="line">  param_type = :slug</span><br><span class="line">  <span class="keyword">if</span> (isNumber(param)) &#123;</span><br><span class="line">    param_type = :code</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> bank <span class="keyword">in</span> <span class="keyword">this</span>.banks &#123;</span><br><span class="line">    <span class="keyword">if</span> (bank[param_type] == param)&#123; </span><br><span class="line">      <span class="keyword">return</span> bank</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>Next, define the <code>addBank(...)</code> method that allows you add a new bank on the <em>fly</em>.</p>
+<p>The <code>addBank(...)</code> method takes in four (4) arguments:</p>
+<ul>
+<li>name : Bank Name</li>
+<li>code : Bank Code</li>
+<li>slug : Bank Slug</li>
+<li>ussd_code : Bank’s USSD code</li>
+</ul>
+<p>With all the argument passed, it adds the new bank using the List <code>addToList()</code> block. However, an exception will be thrown if you are adding a duplicate bank.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">block addBank(name, code, slug, ussd_code)</span><br><span class="line">  <span class="keyword">for</span> bank <span class="keyword">in</span> <span class="keyword">this</span>.banks &#123;</span><br><span class="line">    <span class="keyword">if</span>(bank[:code] == code || bank[:slug] == slug) &#123;</span><br><span class="line">      <span class="keyword">throw</span>(<span class="string">"Bank Already Exist With This Code or Slug"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  bank = [:name = toUpperCase(name), :code = code, :slug = slug, :ussd_code = ussd_code]</span><br><span class="line">  addToList(<span class="keyword">this</span>.banks, bank)</span><br><span class="line">  <span class="keyword">return</span> banks</span><br></pre></td></tr></table></figure>
+<p>With all that covered, your module is set but something is missing. The <code>banks</code> variable holding some default contents. </p>
+<h2 id="Master-List"><a href="#Master-List" class="headerlink" title="Master List"></a>Master List</h2><p>The <code>NgBanks</code> is 90% completed and needs the grace of a default banks variable.</p>
+<p>Create a private variable <code>banks</code> holding the details of some banks :</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">private banks = [</span><br><span class="line">      [:name = <span class="string">'ACCESS BANK PLC'</span>, :code = <span class="number">044</span>, :slug = <span class="string">'ACC'</span>, :ussd_code = <span class="string">'*901#'</span>],</span><br><span class="line">        [:name = <span class="string">'CITIBANK NIGERIA PLC'</span>, :code = <span class="number">023</span>, :slug = <span class="string">'CBN'</span>, :ussd_code = <span class="literal">null</span>],</span><br><span class="line">        [:name = <span class="string">'DIAMOND BANK PLC'</span>, :code = <span class="number">063</span>, :slug = <span class="string">'DMB'</span>, :ussd_code = <span class="string">'*426#'</span>],</span><br><span class="line">        [:name = <span class="string">'ECOBANK NIGERIA PLC'</span>, :code = <span class="number">064</span>, :slug = <span class="string">'EBN'</span>, :ussd_code = <span class="string">'*326#'</span>],</span><br><span class="line">        [:name = <span class="string">'FIDELITY BANK PLC'</span>, :code = <span class="number">070</span>, :slug = <span class="string">'FDB'</span>, :ussd_code = <span class="string">'*770#'</span>],</span><br><span class="line">        [:name = <span class="string">'FIRST BANK NIGERIA LIMITED'</span>, :code = <span class="number">011</span>, :slug = <span class="string">'FBN'</span>, :ussd_code = <span class="string">'*894#'</span>],</span><br><span class="line">        [:name = <span class="string">'FIRST CITY MONUMENT BANK PLC'</span>, :code = <span class="number">214</span>, :slug = <span class="string">'FCB'</span>, :ussd_code = <span class="string">'*329#'</span>],</span><br><span class="line">        [:name = <span class="string">'GUARANTY TRUST BANK PLC'</span>, :code = <span class="number">058</span>, :slug = <span class="string">'GTB'</span>, :ussd_code = <span class="string">'*737#'</span>],</span><br><span class="line">        [:name = <span class="string">'HERITAGE BANK PLC'</span>, :code = <span class="number">030</span>, :slug = <span class="string">'HTB'</span>, :ussd_code = <span class="string">'*322#'</span>],</span><br><span class="line">        [:name = <span class="string">'KEY STONE BANK'</span>, :code = <span class="number">082</span>, :slug = <span class="string">'KSB'</span>, :ussd_code = <span class="string">'*533#'</span>],</span><br><span class="line">        [:name = <span class="string">'MAINSTREET BANK'</span>, :code = <span class="number">014</span>, :slug = <span class="string">'MSB'</span>, :ussd_code = <span class="literal">null</span>],</span><br><span class="line">        [:name = <span class="string">'POLARIS BANK LIMITED'</span>, :code = <span class="number">076</span>, :slug = <span class="string">'PLB'</span>, :ussd_code = <span class="literal">null</span>],</span><br><span class="line">        [:name = <span class="string">'PROVIDUS BANK LIMITED'</span>, :code = <span class="number">101</span>, :slug = <span class="string">'PVB'</span>, :ussd_code = <span class="literal">null</span>],</span><br><span class="line">        [:name = <span class="string">'STANBIC IBTC BANK LTD'</span>, :code = <span class="number">221</span>, :slug = <span class="string">'SIB'</span>, :ussd_code = <span class="string">'*909#'</span>],</span><br><span class="line">        [:name = <span class="string">'STANDARD CHARTERED BANK NIGERIA LTD'</span>, :code = <span class="number">068</span>, :slug = <span class="string">'SCB'</span>, :ussd_code = <span class="literal">null</span>],</span><br><span class="line">        [:name = <span class="string">'STERLING BANK PLC'</span>, :code = <span class="number">232</span>, :slug = <span class="string">'STB'</span>, :ussd_code = <span class="string">'*822#'</span>],</span><br><span class="line">        [:name = <span class="string">'SUNTRUST BANK NIGERIA PLC'</span>, :code = <span class="number">100</span>, :slug = <span class="string">'SBN'</span>, :ussd_code = <span class="literal">null</span>],</span><br><span class="line">        [:name = <span class="string">'UNION BANK OF NIGERIA PLC'</span>, :code = <span class="number">032</span>, :slug = <span class="string">'UBN'</span>, :ussd_code = <span class="string">'*826#'</span>],</span><br><span class="line">        [:name = <span class="string">'UNITED BANK FOR AFRICA PLC'</span>, :code = <span class="number">033</span>, :slug = <span class="string">'UBA'</span>, :ussd_code = <span class="string">'*919#'</span>],</span><br><span class="line">        [:name = <span class="string">'UNITY BANK PLC'</span>, :code = <span class="number">215</span>, :slug = <span class="string">'UNB'</span>, :ussd_code = <span class="string">'*7799#'</span>], </span><br><span class="line">        [:name = <span class="string">'WEMA BANK PLC'</span>, :code = <span class="number">035</span>, :slug = <span class="string">'WEM'</span>, :ussd_code = <span class="string">'*945#'</span>],</span><br><span class="line">        [:name = <span class="string">'ZENITH BANK PLC'</span>, :code = <span class="number">057</span>, :slug = <span class="string">'ZIB'</span>, :ussd_code = <span class="string">'*966#'</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>With that covered, the module is fully ready to be functional. </p>
+<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>For the first test before diving deeper into installation which I’ll be covering in the next post. Add this to the top of the <code>NgBanks</code> class :</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">block main()</span><br><span class="line">  bank = <span class="keyword">new</span> NgBanks</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Get All Banks</span></span><br><span class="line">  @ bank.getBanks()</span><br></pre></td></tr></table></figure>
+<h2 id="In-The-Next-Post"><a href="#In-The-Next-Post" class="headerlink" title="In The Next Post"></a>In The Next Post</h2><p>In the next post, I’ll discuss how to install the module and also write the tests.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/Building-Modules/" data-id="cjokfa2wg0000sask5livnxg6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/modules/">modules</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/Variadic-Parameters/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Variadic Parameters</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/modules/">modules</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/whats-cooking/">whats-cooking</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/modules/" style="font-size: 10px;">modules</a> <a href="/tags/whats-cooking/" style="font-size: 10px;">whats-cooking</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Building-Modules/">Building Modules</a>
+          </li>
+        
+          <li>
+            <a href="/Variadic-Parameters/">Variadic Parameters</a>
+          </li>
+        
+          <li>
+            <a href="/In-The-Kitchen/">In The Kitchen</a>
+          </li>
+        
+          <li>
+            <a href="/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 The simple-lang team<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
